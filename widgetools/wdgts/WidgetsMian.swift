@@ -14,7 +14,7 @@ struct WTWGext: WidgetBundle {
     var body: some Widget {
         WTCounter() // 计数器
         // 快速计时
-        // 随机数生成
+        WTRandgen() // 随机数生成
         // 计算器？
         //
     }

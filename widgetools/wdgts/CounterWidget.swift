@@ -27,7 +27,7 @@ struct CounterProvider: IntentTimelineProvider {
         let currentDate = Date()
         let nextDate = Calendar.current.date(byAdding: .second, value: 1, to: currentDate)!
         
-        let op = ud.integer(forKey: "\(configuration.uniqueTitle ?? "shared")_op")
+        let op = ud.integer(forKey: "_counter_\(configuration.uniqueTitle ?? "shared")_op")
         let operationBadge = op > 0 ? "+1" : (op < 0 ? "-1" : nil)
         
         let timeline = Timeline(entries: [
@@ -44,12 +44,12 @@ struct CounterEntry: TimelineEntry {
     let showBadge: String?
 }
 
-struct WTWGextView: View {
+struct WGCounterView: View {
     var entry: CounterProvider.Entry
     
     var body: some View {
         CounterView(
-            dataID: entry.configuration.uniqueTitle ?? "shared",
+            dataID: entry.configuration.uniqueTitle ?? "Sample",
             showBadge: entry.showBadge
         )
     }
@@ -62,16 +62,16 @@ struct WTCounter: Widget {
         IntentConfiguration(
             kind: kind, intent: CounterProvider.Intent.self,
             provider: CounterProvider()
-        ) {entry in WTWGextView(entry: entry)}
+        ) {entry in WGCounterView(entry: entry)}
         .configurationDisplayName(localized("counter_name"))
         .description(localized("counter_desc"))
         .supportedFamilies([.systemMedium, .systemLarge])
     }
 }
 
-struct wdgts_Previews: PreviewProvider {
+struct Counter_Previews: PreviewProvider {
     static var previews: some View {
-        WTWGextView(
+        WGCounterView(
             entry: CounterEntry(date: Date(), configuration: CounterProvider.Intent(), showBadge: "bdg")
         ).previewContext(WidgetPreviewContext(family: .systemMedium))
     }

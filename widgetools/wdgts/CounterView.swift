@@ -17,7 +17,7 @@ struct CounterView: View {
     init(dataID: String, showBadge: String?) {
         self.showBadge = showBadge
         self.dataID = dataID
-        counter = ud.integer(forKey: dataID)
+        counter = ud.integer(forKey: "_counter_\(dataID)")
     }
     
     var body: some View {
@@ -27,7 +27,7 @@ struct CounterView: View {
                     .font(.system(size: 20, weight: .regular))
                     .foregroundColor(.gray)
                 if let badge = showBadge {
-                    Text(badge)
+                    Text(badge).foregroundColor(.blue)
                 }
             }
             

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D3A9B5A282D534600F0483A /* RandgenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A9B59282D534600F0483A /* RandgenWidget.swift */; };
+		4D3A9B5C282D548500F0483A /* RandgenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A9B5B282D548500F0483A /* RandgenView.swift */; };
 		4D4D1F41282CEE2800093C42 /* WidgetsMian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D1F40282CEE2800093C42 /* WidgetsMian.swift */; };
 		4D79C245282CDA6F0098F230 /* widgetoolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D79C244282CDA6F0098F230 /* widgetoolsApp.swift */; };
 		4D79C247282CDA6F0098F230 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D79C246282CDA6F0098F230 /* ContentView.swift */; };
@@ -16,8 +18,8 @@
 		4D79C25B282CDAFF0098F230 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D79C25A282CDAFF0098F230 /* SwiftUI.framework */; };
 		4D79C25E282CDAFF0098F230 /* CounterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D79C25D282CDAFF0098F230 /* CounterWidget.swift */; };
 		4D79C261282CDB000098F230 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D79C260282CDB000098F230 /* Assets.xcassets */; };
-		4D79C263282CDB000098F230 /* CounterConfig.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 4D79C25F282CDAFF0098F230 /* CounterConfig.intentdefinition */; };
-		4D79C264282CDB000098F230 /* CounterConfig.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 4D79C25F282CDAFF0098F230 /* CounterConfig.intentdefinition */; };
+		4D79C263282CDB000098F230 /* WidgetConfig.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 4D79C25F282CDAFF0098F230 /* WidgetConfig.intentdefinition */; };
+		4D79C264282CDB000098F230 /* WidgetConfig.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 4D79C25F282CDAFF0098F230 /* WidgetConfig.intentdefinition */; };
 		4D79C267282CDB000098F230 /* wdgtsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4D79C256282CDAFF0098F230 /* wdgtsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4D79C26D282CDD450098F230 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D79C26C282CDD450098F230 /* CounterView.swift */; };
 		4D79C272282CDE8E0098F230 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D79C271282CDE8E0098F230 /* Utils.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D3A9B59282D534600F0483A /* RandgenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandgenWidget.swift; sourceTree = "<group>"; };
+		4D3A9B5B282D548500F0483A /* RandgenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandgenView.swift; sourceTree = "<group>"; };
 		4D4D1F40282CEE2800093C42 /* WidgetsMian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetsMian.swift; sourceTree = "<group>"; };
 		4D79C241282CDA6F0098F230 /* widgetools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = widgetools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D79C244282CDA6F0098F230 /* widgetoolsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetoolsApp.swift; sourceTree = "<group>"; };
@@ -59,7 +63,7 @@
 		4D79C258282CDAFF0098F230 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		4D79C25A282CDAFF0098F230 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		4D79C25D282CDAFF0098F230 /* CounterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterWidget.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		4D79C25F282CDAFF0098F230 /* CounterConfig.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = CounterConfig.intentdefinition; sourceTree = "<group>"; };
+		4D79C25F282CDAFF0098F230 /* WidgetConfig.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = WidgetConfig.intentdefinition; sourceTree = "<group>"; };
 		4D79C260282CDB000098F230 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D79C262282CDB000098F230 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D79C26C282CDD450098F230 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
@@ -146,9 +150,11 @@
 				4D79C260282CDB000098F230 /* Assets.xcassets */,
 				4D79C262282CDB000098F230 /* Info.plist */,
 				4D4D1F40282CEE2800093C42 /* WidgetsMian.swift */,
-				4D79C25F282CDAFF0098F230 /* CounterConfig.intentdefinition */,
+				4D79C25F282CDAFF0098F230 /* WidgetConfig.intentdefinition */,
 				4D79C25D282CDAFF0098F230 /* CounterWidget.swift */,
 				4D79C26C282CDD450098F230 /* CounterView.swift */,
+				4D3A9B59282D534600F0483A /* RandgenWidget.swift */,
+				4D3A9B5B282D548500F0483A /* RandgenView.swift */,
 			);
 			path = wdgts;
 			sourceTree = "<group>";
@@ -256,7 +262,7 @@
 			files = (
 				4D79C247282CDA6F0098F230 /* ContentView.swift in Sources */,
 				4D79C245282CDA6F0098F230 /* widgetoolsApp.swift in Sources */,
-				4D79C264282CDB000098F230 /* CounterConfig.intentdefinition in Sources */,
+				4D79C264282CDB000098F230 /* WidgetConfig.intentdefinition in Sources */,
 				4D79C272282CDE8E0098F230 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,9 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D79C263282CDB000098F230 /* CounterConfig.intentdefinition in Sources */,
+				4D79C263282CDB000098F230 /* WidgetConfig.intentdefinition in Sources */,
 				4D79C25E282CDAFF0098F230 /* CounterWidget.swift in Sources */,
 				4D79C26D282CDD450098F230 /* CounterView.swift in Sources */,
+				4D3A9B5A282D534600F0483A /* RandgenWidget.swift in Sources */,
+				4D3A9B5C282D548500F0483A /* RandgenView.swift in Sources */,
 				4D4D1F41282CEE2800093C42 /* WidgetsMian.swift in Sources */,
 				4D79C273282CDE8E0098F230 /* Utils.swift in Sources */,
 			);

@@ -17,12 +17,17 @@ struct widgetoolsApp: App {
                     let cmd = url.absoluteString.split(separator: "/")
                     switch cmd[0] {
                     case "counter":
-                        let oldValue = ud.integer(forKey: String(cmd[1]))
+                        let oldValue = ud.integer(forKey: "_counter_\(cmd[1])")
                         let newValue = cmd[2] == "inc" ? oldValue + 1 : oldValue - 1
-                        ud.set(newValue, forKey: String(cmd[1]))
-                        ud.set(cmd[2] == "inc" ? 1 : -1, forKey: "\(cmd[1])_op")
+                        ud.set(newValue, forKey: "_counter_\(cmd[1])")
+                        ud.set(cmd[2] == "inc" ? 1 : -1, forKey: "_counter_\(cmd[1])_op")
                         WidgetCenter.shared.reloadTimelines(ofKind: "com.wyw.widgetools.widget.counter")
                         UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
+                    case "randgen":
+                        if cmd[1] == "new" {
+                            WidgetCenter.shared.reloadTimelines(ofKind: "com.wyw.widgetools.widget.randgen")
+                            UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
+                        }
                     default: break
                     }
                 }

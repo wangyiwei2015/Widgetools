@@ -9,8 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Hello, world!").padding()
+            Text(
+                ud.dictionaryRepresentation().keys
+                .filter({$0.prefix(9) == "_counter_"})
+                .description
+            )
+        }
     }
 }
 
