@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D15A4A9282E15980027F675 /* PixelCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15A4A8282E15980027F675 /* PixelCanvas.swift */; };
+		4D15A4A9282E15980027F675 /* PixelCanvasWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15A4A8282E15980027F675 /* PixelCanvasWidget.swift */; };
+		4D15A4AB282E292D0027F675 /* CanvasCtrlWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15A4AA282E292D0027F675 /* CanvasCtrlWidget.swift */; };
+		4D15A4AD282E3E390027F675 /* TransparentWidgetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15A4AC282E3E390027F675 /* TransparentWidgetHelper.swift */; };
+		4D15A4AF282E42240027F675 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15A4AE282E42240027F675 /* ImagePicker.swift */; };
+		4D15A4B1282E42390027F675 /* ContentView+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15A4B0282E42390027F675 /* ContentView+Crop.swift */; };
 		4D3A9B5A282D534600F0483A /* RandgenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A9B59282D534600F0483A /* RandgenWidget.swift */; };
 		4D4D1F41282CEE2800093C42 /* WidgetsMian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D1F40282CEE2800093C42 /* WidgetsMian.swift */; };
 		4D79C245282CDA6F0098F230 /* widgetoolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D79C244282CDA6F0098F230 /* widgetoolsApp.swift */; };
@@ -50,7 +54,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4D15A4A8282E15980027F675 /* PixelCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelCanvas.swift; sourceTree = "<group>"; };
+		4D15A4A8282E15980027F675 /* PixelCanvasWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelCanvasWidget.swift; sourceTree = "<group>"; };
+		4D15A4AA282E292D0027F675 /* CanvasCtrlWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasCtrlWidget.swift; sourceTree = "<group>"; };
+		4D15A4AC282E3E390027F675 /* TransparentWidgetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentWidgetHelper.swift; sourceTree = "<group>"; };
+		4D15A4AE282E42240027F675 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		4D15A4B0282E42390027F675 /* ContentView+Crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+Crop.swift"; sourceTree = "<group>"; };
 		4D3A9B59282D534600F0483A /* RandgenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandgenWidget.swift; sourceTree = "<group>"; };
 		4D4D1F40282CEE2800093C42 /* WidgetsMian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetsMian.swift; sourceTree = "<group>"; };
 		4D79C241282CDA6F0098F230 /* widgetools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = widgetools.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,8 +127,11 @@
 				4D79C26E282CDD990098F230 /* Info.plist */,
 				4D79C244282CDA6F0098F230 /* widgetoolsApp.swift */,
 				4D79C246282CDA6F0098F230 /* ContentView.swift */,
+				4D15A4B0282E42390027F675 /* ContentView+Crop.swift */,
+				4D15A4AE282E42240027F675 /* ImagePicker.swift */,
 				4D79C248282CDA700098F230 /* Assets.xcassets */,
 				4D79C24A282CDA700098F230 /* Preview Content */,
+				4D15A4AC282E3E390027F675 /* TransparentWidgetHelper.swift */,
 			);
 			path = widgetools;
 			sourceTree = "<group>";
@@ -151,7 +162,8 @@
 				4D79C25F282CDAFF0098F230 /* WidgetConfig.intentdefinition */,
 				4D79C25D282CDAFF0098F230 /* CounterWidget.swift */,
 				4D3A9B59282D534600F0483A /* RandgenWidget.swift */,
-				4D15A4A8282E15980027F675 /* PixelCanvas.swift */,
+				4D15A4A8282E15980027F675 /* PixelCanvasWidget.swift */,
+				4D15A4AA282E292D0027F675 /* CanvasCtrlWidget.swift */,
 			);
 			path = wdgts;
 			sourceTree = "<group>";
@@ -260,6 +272,9 @@
 				4D79C247282CDA6F0098F230 /* ContentView.swift in Sources */,
 				4D79C245282CDA6F0098F230 /* widgetoolsApp.swift in Sources */,
 				4D79C264282CDB000098F230 /* WidgetConfig.intentdefinition in Sources */,
+				4D15A4B1282E42390027F675 /* ContentView+Crop.swift in Sources */,
+				4D15A4AF282E42240027F675 /* ImagePicker.swift in Sources */,
+				4D15A4AD282E3E390027F675 /* TransparentWidgetHelper.swift in Sources */,
 				4D79C272282CDE8E0098F230 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,11 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D15A4A9282E15980027F675 /* PixelCanvas.swift in Sources */,
+				4D15A4A9282E15980027F675 /* PixelCanvasWidget.swift in Sources */,
 				4D79C263282CDB000098F230 /* WidgetConfig.intentdefinition in Sources */,
 				4D79C25E282CDAFF0098F230 /* CounterWidget.swift in Sources */,
 				4D3A9B5A282D534600F0483A /* RandgenWidget.swift in Sources */,
 				4D4D1F41282CEE2800093C42 /* WidgetsMian.swift in Sources */,
+				4D15A4AB282E292D0027F675 /* CanvasCtrlWidget.swift in Sources */,
 				4D79C273282CDE8E0098F230 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,13 +426,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = widgetools/widgetools.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"widgetools/Preview Content\"";
 				DEVELOPMENT_TEAM = JS2ME2LTBF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = widgetools/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Widgetools;
+				INFOPLIST_KEY_CFBundleDisplayName = "   ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -444,13 +460,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = widgetools/widgetools.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"widgetools/Preview Content\"";
 				DEVELOPMENT_TEAM = JS2ME2LTBF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = widgetools/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Widgetools;
+				INFOPLIST_KEY_CFBundleDisplayName = "   ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -477,11 +493,11 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = wdgtsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JS2ME2LTBF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wdgts/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Widgetools;
+				INFOPLIST_KEY_CFBundleDisplayName = "   ";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -506,11 +522,11 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = wdgtsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JS2ME2LTBF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wdgts/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Widgetools;
+				INFOPLIST_KEY_CFBundleDisplayName = "   ";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (

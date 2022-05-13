@@ -50,50 +50,114 @@ struct WGCounterView: View {
     var counterID: String
     var showBadge: String?
     
-    init(title: String, showBadge: String?) {
+    var pos: HomeScreenPosition?
+    var background: UIImage? {
+        if let pos = pos {
+            let colorChar = colorScheme == .light ? "B" : "D"
+            var imgID = 0
+            switch widgetFamily {
+            case .systemSmall:
+                imgID = pos.rawValue
+            case .systemMedium:
+                imgID = Int((pos.rawValue + 1) / 2) + 6
+            case .systemLarge:
+                imgID = pos.rawValue > 3 ? 11 : 10
+            default: break
+            }
+            return try? UIImage(data: Data(contentsOf: URL(
+                fileURLWithPath: "\(wallPath)/img\(colorChar)\(imgID).jpg"
+            )))
+        }
+        return nil
+    }
+    
+    @Environment(\.widgetFamily) var widgetFamily
+    @Environment(\.colorScheme) var colorScheme
+    
+    init(title: String, showBadge: String?, pos: HomeScreenPosition?) {
         self.showBadge = showBadge
         self.title = title
         self.counterID = hashSHA256(title)
         self.counter = ud.integer(forKey: "_counter_\(self.counterID)")
-        
+        self.pos = pos
     }
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("\(title)")
-                    .font(.system(size: 20, weight: .regular))
-                    .foregroundColor(.gray)
-                if let badge = showBadge {
-                    Text(badge).foregroundColor(.blue)
+        ZStack {
+            if let wallpaperClip = background {
+                Image(uiImage: wallpaperClip).resizable()
+            }
+            if widgetFamily == .systemMedium {
+                HStack {
+                    BtnDec()
+                    VStack {
+                        Header()
+                        Text("\(counter)")
+                            .font(.system(size: 40, weight: .regular, design: .monospaced))
+                    }.padding(.horizontal)
+                    BtnInc()
                 }
+                .padding()
+                .background(
+                    Capsule(style: .continuous).fill().foregroundColor(Color(UIColor.systemBackground))
+                        .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 4)
+                )
+            } else {
+                VStack {
+                    Header()
+                    Text("\(counter)")
+                        .font(.system(size: 80, weight: .regular, design: .monospaced))
+                        .padding()
+                    HStack {
+                        BtnDec().padding(.horizontal)
+                        BtnInc().padding(.horizontal)
+                    }
+                }
+                .padding()
+                .background(
+                    Color(UIColor.systemBackground)
+                        .mask(RoundedRectangle(cornerRadius: 40, style: .continuous))
+                        .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 4)
+                )
             }
-            
-            HStack {
-                Link(destination: URL(string: "counter/\(counterID)/dec")!) {
-                    Image(systemName: "minus")
-                        .font(.system(size: 28, weight: .semibold, design: .rounded))
-                        .foregroundColor(.white)
-                        .background(
-                            Circle().fill().foregroundColor(.blue)
-                                .frame(width: 60, height: 60)
-                        )
-                }.frame(width: 60, height: 60)
-                Spacer()
-                Text("\(counter)")
-                    .font(.system(size: 40, weight: .regular, design: .monospaced))
-                Spacer()
-                Link(destination: URL(string: "counter/\(counterID)/inc")!) {
-                    Image(systemName: "plus")
-                        .font(.system(size: 28, weight: .semibold, design: .rounded))
-                        .foregroundColor(.white)
-                        .background(
-                            Circle().fill().foregroundColor(.blue)
-                                .frame(width: 60, height: 60)
-                        )
-                }.frame(width: 60, height: 60)
+        }
+    }
+    
+    @ViewBuilder func Header() -> some View {
+        HStack {
+            Text("\(title)")
+                .font(.system(size: 20, weight: .regular))
+                .foregroundColor(.gray)
+            if let badge = showBadge {
+                Text(badge).foregroundColor(.blue)
             }
-        }.padding(.horizontal)
+        }
+    }
+    
+    @ViewBuilder func BtnDec() -> some View {
+        Link(destination: URL(string: "counter/\(counterID)/dec")!) {
+            Image(systemName: "minus")
+                .font(.system(size: 28, weight: .semibold, design: .rounded))
+                .foregroundColor(.white)
+                .background(
+                    Circle().fill().foregroundColor(.blue)
+                        .frame(width: 60, height: 60)
+                        .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 2)
+                )
+        }.frame(width: 60, height: 60)
+    }
+    
+    @ViewBuilder func BtnInc() -> some View {
+        Link(destination: URL(string: "counter/\(counterID)/inc")!) {
+            Image(systemName: "plus")
+                .font(.system(size: 28, weight: .semibold, design: .rounded))
+                .foregroundColor(.white)
+                .background(
+                    Circle().fill().foregroundColor(.blue)
+                        .frame(width: 60, height: 60)
+                        .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 2)
+                )
+        }.frame(width: 60, height: 60)
     }
 }
 
@@ -105,7 +169,9 @@ struct WTCounter: Widget {
             kind: kind, intent: CounterProvider.Intent.self,
             provider: CounterProvider()
         ) {entry in WGCounterView(
-            title: entry.configuration.uniqueTitle ?? "Sample", showBadge: entry.showBadge
+            title: entry.configuration.uniqueTitle ?? "Sample",
+            showBadge: entry.showBadge,
+            pos: entry.configuration.transparent == 1 ? entry.configuration.position : nil
         )}
         .configurationDisplayName(localized("counter_name"))
         .description(localized("counter_desc"))
@@ -116,7 +182,7 @@ struct WTCounter: Widget {
 struct Counter_Previews: PreviewProvider {
     static var previews: some View {
         WGCounterView(
-            title: "Sample", showBadge: "bdg"
+            title: "Sample", showBadge: "bdg", pos: nil
         ).previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

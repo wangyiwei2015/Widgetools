@@ -52,44 +52,95 @@ struct RandgenEntry: TimelineEntry {
 }
 
 struct WGRandgenView: View {
-    //var entry: RandgenProvider.Entry
     var number: Int?
+    var pos: HomeScreenPosition?
+    var background: UIImage? {
+        if let pos = pos {
+            let colorChar = colorScheme == .light ? "B" : "D"
+            var imgID = 0
+            switch widgetFamily {
+            case .systemSmall:
+                imgID = pos.rawValue
+            case .systemMedium:
+                imgID = Int((pos.rawValue + 1) / 2) + 6
+            case .systemLarge:
+                imgID = pos.rawValue > 3 ? 11 : 10
+            default: break
+            }
+            return try? UIImage(data: Data(contentsOf: URL(
+                fileURLWithPath: "\(wallPath)/img\(colorChar)\(imgID).jpg"
+            )))
+        }
+        return nil
+    }
+    
     @Environment(\.widgetFamily) var widgetFamily
+    @Environment(\.colorScheme) var colorScheme
+    
+    init(number: Int?, pos: HomeScreenPosition?) {
+        self.number = number
+        self.pos = pos
+    }
     
     var body: some View {
-        if widgetFamily == .systemSmall {
-            VStack {
-                if let result = number {
-                    Text("\(result)").padding()
-                        .font(.system(size: 30, weight: .semibold))
-                } else {
-                    Text("Config error").padding()
-                        .font(.system(size: 20, weight: .semibold))
+        ZStack {
+            if let wallpaperClip = background {
+                Image(uiImage: wallpaperClip).resizable()
+            }
+            if widgetFamily == .systemSmall {
+                HStack {
+                    Spacer()
+                    VStack {
+                        Spacer()
+                        if let result = number {
+                            Text("\(result)")
+                                .font(.system(size: 30, weight: .semibold))
+                                .padding(10)
+                        } else {
+                            Text("Config error").padding()
+                                .font(.system(size: 20, weight: .semibold))
+                        }
+                        Text("Tap to\nrefresh")
+                            .font(.system(size: 14, weight: .regular))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.gray)
+                        Spacer()
+                    }
+                    Spacer()
                 }
-                Text("Tap to re-generate")
-                    .font(.system(size: 14, weight: .regular))
-                    .foregroundColor(.gray)
-            }.widgetURL(URL(string: "randgen/new")!)
-        } else {
-            HStack {
-                Spacer()
-                if let result = number {
-                    Text("\(result)")
-                        .font(.system(size: 32, weight: .semibold))
-                } else {
-                    Text("Config error")
-                        .font(.system(size: 32, weight: .semibold))
+                .background(
+                    Circle().fill().foregroundColor(Color(UIColor.systemBackground))
+                        .padding(6)
+                        .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 4)
+                )
+                .widgetURL(URL(string: "randgen/new")!)
+            } else {
+                HStack {
+                    Spacer()
+                    if let result = number {
+                        Text("\(result)")
+                            .font(.system(size: 32, weight: .semibold))
+                    } else {
+                        Text("Config error")
+                            .font(.system(size: 32, weight: .semibold))
+                    }
+                    Spacer()
+                    Link(destination: URL(string: "randgen/new")!) {
+                        Image(systemName: "arrow.counterclockwise")
+                            .font(.system(size: 28, weight: .semibold, design: .rounded))
+                            .foregroundColor(.white)
+                            .background(
+                                Circle().fill().foregroundColor(.blue)
+                                    .frame(width: 60, height: 60)
+                                    .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 2)
+                            )
+                    }.frame(width: 60, height: 60).padding(.trailing)
                 }
-                Spacer()
-                Link(destination: URL(string: "randgen/new")!) {
-                    Image(systemName: "arrow.counterclockwise")
-                        .font(.system(size: 28, weight: .semibold, design: .rounded))
-                        .foregroundColor(.white)
-                        .background(
-                            Circle().fill().foregroundColor(.blue)
-                                .frame(width: 60, height: 60)
-                        )
-                }.frame(width: 60, height: 60).padding(.trailing)
+                .padding(.vertical)
+                .background(
+                    Capsule(style: .continuous).fill().foregroundColor(Color(UIColor.systemBackground))
+                        .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 4)
+                )
             }
         }
     }
@@ -102,17 +153,20 @@ struct WTRandgen: Widget {
         IntentConfiguration(
             kind: kind, intent: RandgenProvider.Intent.self,
             provider: RandgenProvider()
-        ) {entry in WGRandgenView(number: entry.number)}
+        ) {entry in WGRandgenView(
+            number: entry.number,
+            pos: entry.configuration.transparent == 1 ? entry.configuration.position : nil
+        )}
         .configurationDisplayName(localized("randgen_name"))
         .description(localized("randgen_desc"))
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
 struct Randgen_Previews: PreviewProvider {
     static var previews: some View {
         WGRandgenView(
-            number: 12345678
+            number: 12345678, pos: nil
         ).previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

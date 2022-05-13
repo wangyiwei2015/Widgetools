@@ -9,7 +9,7 @@ import Foundation
 import CryptoKit
 
 let ud = UserDefaults(suiteName: "group.com.wyw.widgetools")!
-let groupURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.wyw.widgetools")
+let wallPath = "\(FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.wyw.widgetools")!.path)/Documents/wallpaper"
 
 func localized(_ key: String) -> String {
     NSLocalizedString(key, comment: "")
@@ -22,3 +22,5 @@ func hashSHA256(_ input: String) -> String {
         String(format: "%02x", $0)
     }.joined()
 }
+
+//
