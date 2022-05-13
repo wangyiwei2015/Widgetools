@@ -16,6 +16,6 @@ struct WTWGext: WidgetBundle {
         // 快速计时
         WTRandgen() // 随机数生成
         // 计算器？
-        //
+        WTCanvas() // 像素绘图板
     }
 }

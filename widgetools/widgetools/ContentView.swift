@@ -10,10 +10,15 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Text("Hello, world!").padding()
+            Text("\(hashSHA256("文本"))").padding()
             Text(
                 ud.dictionaryRepresentation().keys
                 .filter({$0.prefix(9) == "_counter_"})
+                .description
+            )
+            Text(
+                ud.dictionaryRepresentation().keys
+                .filter({$0.prefix(8) == "_canvas_"})
                 .description
             )
         }

@@ -52,14 +52,46 @@ struct RandgenEntry: TimelineEntry {
 }
 
 struct WGRandgenView: View {
-    var entry: RandgenProvider.Entry
+    //var entry: RandgenProvider.Entry
+    var number: Int?
     @Environment(\.widgetFamily) var widgetFamily
     
     var body: some View {
-        RandgenView(
-            isSmallWidget: widgetFamily == .systemSmall,
-            number: entry.number
-        )
+        if widgetFamily == .systemSmall {
+            VStack {
+                if let result = number {
+                    Text("\(result)").padding()
+                        .font(.system(size: 30, weight: .semibold))
+                } else {
+                    Text("Config error").padding()
+                        .font(.system(size: 20, weight: .semibold))
+                }
+                Text("Tap to re-generate")
+                    .font(.system(size: 14, weight: .regular))
+                    .foregroundColor(.gray)
+            }.widgetURL(URL(string: "randgen/new")!)
+        } else {
+            HStack {
+                Spacer()
+                if let result = number {
+                    Text("\(result)")
+                        .font(.system(size: 32, weight: .semibold))
+                } else {
+                    Text("Config error")
+                        .font(.system(size: 32, weight: .semibold))
+                }
+                Spacer()
+                Link(destination: URL(string: "randgen/new")!) {
+                    Image(systemName: "arrow.counterclockwise")
+                        .font(.system(size: 28, weight: .semibold, design: .rounded))
+                        .foregroundColor(.white)
+                        .background(
+                            Circle().fill().foregroundColor(.blue)
+                                .frame(width: 60, height: 60)
+                        )
+                }.frame(width: 60, height: 60).padding(.trailing)
+            }
+        }
     }
 }
 
@@ -70,7 +102,7 @@ struct WTRandgen: Widget {
         IntentConfiguration(
             kind: kind, intent: RandgenProvider.Intent.self,
             provider: RandgenProvider()
-        ) {entry in WGRandgenView(entry: entry)}
+        ) {entry in WGRandgenView(number: entry.number)}
         .configurationDisplayName(localized("randgen_name"))
         .description(localized("randgen_desc"))
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
@@ -80,7 +112,7 @@ struct WTRandgen: Widget {
 struct Randgen_Previews: PreviewProvider {
     static var previews: some View {
         WGRandgenView(
-            entry: RandgenEntry(date: Date(), configuration: RandgenProvider.Intent(), number: 12345678)
+            number: 12345678
         ).previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

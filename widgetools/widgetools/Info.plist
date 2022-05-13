@@ -6,6 +6,7 @@
 	<false/>
 	<key>NSUserActivityTypes</key>
 	<array>
+		<string>CanvasConfigIntent</string>
 		<string>CounterConfigIntent</string>
 		<string>RandomConfigIntent</string>
 	</array>
