@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0A983B282F4CF700329C4F /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0A983A282F4CF600329C4F /* DataView.swift */; };
 		4D15A4A9282E15980027F675 /* PixelCanvasWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15A4A8282E15980027F675 /* PixelCanvasWidget.swift */; };
 		4D15A4AB282E292D0027F675 /* CanvasCtrlWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15A4AA282E292D0027F675 /* CanvasCtrlWidget.swift */; };
 		4D15A4AD282E3E390027F675 /* TransparentWidgetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15A4AC282E3E390027F675 /* TransparentWidgetHelper.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D0A983A282F4CF600329C4F /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		4D15A4A8282E15980027F675 /* PixelCanvasWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelCanvasWidget.swift; sourceTree = "<group>"; };
 		4D15A4AA282E292D0027F675 /* CanvasCtrlWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasCtrlWidget.swift; sourceTree = "<group>"; };
 		4D15A4AC282E3E390027F675 /* TransparentWidgetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentWidgetHelper.swift; sourceTree = "<group>"; };
@@ -63,7 +65,7 @@
 		4D4D1F40282CEE2800093C42 /* WidgetsMian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetsMian.swift; sourceTree = "<group>"; };
 		4D79C241282CDA6F0098F230 /* widgetools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = widgetools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D79C244282CDA6F0098F230 /* widgetoolsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetoolsApp.swift; sourceTree = "<group>"; };
-		4D79C246282CDA6F0098F230 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4D79C246282CDA6F0098F230 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		4D79C248282CDA700098F230 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D79C24B282CDA700098F230 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4D79C256282CDAFF0098F230 /* wdgtsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = wdgtsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 				4D79C246282CDA6F0098F230 /* ContentView.swift */,
 				4D15A4B0282E42390027F675 /* ContentView+Crop.swift */,
 				4D15A4AE282E42240027F675 /* ImagePicker.swift */,
+				4D0A983A282F4CF600329C4F /* DataView.swift */,
 				4D79C248282CDA700098F230 /* Assets.xcassets */,
 				4D79C24A282CDA700098F230 /* Preview Content */,
 				4D15A4AC282E3E390027F675 /* TransparentWidgetHelper.swift */,
@@ -275,6 +278,7 @@
 				4D15A4B1282E42390027F675 /* ContentView+Crop.swift in Sources */,
 				4D15A4AF282E42240027F675 /* ImagePicker.swift in Sources */,
 				4D15A4AD282E3E390027F675 /* TransparentWidgetHelper.swift in Sources */,
+				4D0A983B282F4CF700329C4F /* DataView.swift in Sources */,
 				4D79C272282CDE8E0098F230 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,7 +436,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = widgetools/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "   ";
+				INFOPLIST_KEY_CFBundleDisplayName = WidgeTools;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -466,7 +470,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = widgetools/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "   ";
+				INFOPLIST_KEY_CFBundleDisplayName = WidgeTools;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -497,7 +501,7 @@
 				DEVELOPMENT_TEAM = JS2ME2LTBF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wdgts/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "   ";
+				INFOPLIST_KEY_CFBundleDisplayName = WidgeTools;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -526,7 +530,7 @@
 				DEVELOPMENT_TEAM = JS2ME2LTBF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wdgts/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "   ";
+				INFOPLIST_KEY_CFBundleDisplayName = WidgeTools;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (

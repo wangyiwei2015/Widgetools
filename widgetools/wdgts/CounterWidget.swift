@@ -90,24 +90,36 @@ struct WGCounterView: View {
             if widgetFamily == .systemMedium {
                 HStack {
                     BtnDec()
+                    Spacer()
                     VStack {
                         Header()
-                        Text("\(counter)")
-                            .font(.system(size: 40, weight: .regular, design: .monospaced))
+                        HStack {
+                            Text("\(counter)")
+                                .font(.system(size: 40, weight: .regular, design: .monospaced))
+                            if let badge = showBadge {
+                                Text(badge).foregroundColor(.blue)
+                            }
+                        }
                     }.padding(.horizontal)
+                    Spacer()
                     BtnInc()
                 }
                 .padding()
                 .background(
-                    Capsule(style: .continuous).fill().foregroundColor(Color(UIColor.systemBackground))
+                    Capsule().fill().foregroundColor(Color(UIColor.systemBackground))
                         .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 4)
                 )
             } else {
                 VStack {
                     Header()
-                    Text("\(counter)")
-                        .font(.system(size: 80, weight: .regular, design: .monospaced))
-                        .padding()
+                    HStack {
+                        Text("\(counter)")
+                            .font(.system(size: 80, weight: .regular, design: .monospaced))
+                            .padding()
+                        if let badge = showBadge {
+                            Text(badge).foregroundColor(.blue)
+                        }
+                    }
                     HStack {
                         BtnDec().padding(.horizontal)
                         BtnInc().padding(.horizontal)
@@ -120,17 +132,14 @@ struct WGCounterView: View {
                         .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 4)
                 )
             }
-        }
+        }.widgetURL(URL(string: "return/0")!)
     }
     
     @ViewBuilder func Header() -> some View {
-        HStack {
+        ZStack {
             Text("\(title)")
-                .font(.system(size: 20, weight: .regular))
+                .font(.system(size: 18, weight: .regular))
                 .foregroundColor(.gray)
-            if let badge = showBadge {
-                Text(badge).foregroundColor(.blue)
-            }
         }
     }
     

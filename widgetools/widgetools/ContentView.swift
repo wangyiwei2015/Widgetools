@@ -23,22 +23,11 @@ struct ContentView: View {
             Text("WidgeTools").font(.title).foregroundColor(.gray)
                 .tag(0).tabItem({Label("Title", systemImage: "swift")})
             
-            ScrollView(.vertical, showsIndicators: true) {
-                VStack {
-                    Text(
-                        ud.dictionaryRepresentation().keys
-                        .filter({$0.prefix(9) == "_counter_"})
-                        .description
-                    )
-                    Text(
-                        ud.dictionaryRepresentation().keys
-                        .filter({$0.prefix(8) == "_canvas_"})
-                        .description
-                    )
-                }.padding()
-            }.tag(1).tabItem({Label("Data", systemImage: "doc")})
+            DataView()
+                .tag(1).tabItem({Label("Data", systemImage: "doc")})
             
             VStack {
+                Text("Set wallpaper").padding()
                 HStack {
                     LightModeWallpaper
                         //.shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 2)
