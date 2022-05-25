@@ -7,16 +7,29 @@
 
 import SwiftUI
 
+//extension String: Identifiable {
+//    public var id: String {self}
+//}
+
 struct DataView: View {
     
     @State var counters: [String] = ud.dictionaryRepresentation()
-        .keys.filter({$0.prefix(9) == "_counter_"})
+        .keys.filter({$0.prefix(9) == "_counter_"}).sorted()
     @State var canvases: [String] = ud.dictionaryRepresentation()
-        .keys.filter({$0.prefix(8) == "_canvas_"})
+        .keys.filter({$0.prefix(8) == "_canvas_"}).sorted()
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
-            VStack {
+            VStack(spacing: 16) {
+                
+//                Section {
+//                    List(counters) {counterKey in
+//                        Text(counterKey)
+//                    }
+//                } header: {
+//                    Text("List")
+//                }
+                
                 Section {
                     ForEach(counters, id: \.self) {counterKey in
                         Text(counterKey).padding()
@@ -31,6 +44,7 @@ struct DataView: View {
                                         ud.removeObject(forKey: counterKey)
                                         counters = ud.dictionaryRepresentation()
                                             .keys.filter({$0.prefix(9) == "_counter_"})
+                                            .sorted()
                                     }
                                 } label: {Label("delete", systemImage: "trash")}
                             }
@@ -57,6 +71,7 @@ struct DataView: View {
                                         ud.removeObject(forKey: canvasKey)
                                         canvases = ud.dictionaryRepresentation()
                                             .keys.filter({$0.prefix(8) == "_canvas_"})
+                                            .sorted()
                                     }
                                 } label: {Label("delete", systemImage: "trash")}
                             }

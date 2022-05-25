@@ -28,6 +28,7 @@
 		4D79C267282CDB000098F230 /* wdgtsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4D79C256282CDAFF0098F230 /* wdgtsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4D79C272282CDE8E0098F230 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D79C271282CDE8E0098F230 /* Utils.swift */; };
 		4D79C273282CDE8E0098F230 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D79C271282CDE8E0098F230 /* Utils.swift */; };
+		4DF432482830AB68004A17FD /* TimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF432472830AB68004A17FD /* TimerWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		4D79C26F282CDE080098F230 /* widgetools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widgetools.entitlements; sourceTree = "<group>"; };
 		4D79C270282CDE270098F230 /* wdgtsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wdgtsExtension.entitlements; sourceTree = "<group>"; };
 		4D79C271282CDE8E0098F230 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		4DF432472830AB68004A17FD /* TimerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWidget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				4D3A9B59282D534600F0483A /* RandgenWidget.swift */,
 				4D15A4A8282E15980027F675 /* PixelCanvasWidget.swift */,
 				4D15A4AA282E292D0027F675 /* CanvasCtrlWidget.swift */,
+				4DF432472830AB68004A17FD /* TimerWidget.swift */,
 			);
 			path = wdgts;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D15A4A9282E15980027F675 /* PixelCanvasWidget.swift in Sources */,
+				4DF432482830AB68004A17FD /* TimerWidget.swift in Sources */,
 				4D79C263282CDB000098F230 /* WidgetConfig.intentdefinition in Sources */,
 				4D79C25E282CDAFF0098F230 /* CounterWidget.swift in Sources */,
 				4D3A9B5A282D534600F0483A /* RandgenWidget.swift in Sources */,
@@ -441,7 +445,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,7 +456,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -475,7 +479,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -486,7 +490,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

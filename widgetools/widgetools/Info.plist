@@ -9,6 +9,7 @@
 		<string>CanvasConfigIntent</string>
 		<string>CounterConfigIntent</string>
 		<string>RandomConfigIntent</string>
+		<string>TimerConfigIntent</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

@@ -31,6 +31,8 @@ struct widgetoolsApp: App {
                             WidgetCenter.shared.reloadTimelines(ofKind: "com.wyw.widgetools.widget.randgen")
                             UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
                         }
+                    case "timer":
+                        //
                     case "canvas":
                         let canvasID = String(cmd[1])
                         let targetColor = ud.integer(forKey: "_canvas_\(canvasID)_cfg")
@@ -77,4 +79,31 @@ struct widgetoolsApp: App {
                 }
         }
     }
+    
+//    func addNotification(_ n: Int, _ t: Int) {
+//        let content = UNMutableNotificationContent()
+//        content.title = "抗原检测\(n+1) \(t == 0 ? "已开始" : "即将结束")"
+//        content.body = "\(times[n][0].0):\(times[n][0].1)0 - \(times[n][1].0):\(times[n][1].1)"
+//        content.userInfo = [:]
+//        content.sound = .default
+//        var matchingDate = DateComponents()
+//        if t == 0 {
+//            matchingDate.hour = times[n][t].0
+//            matchingDate.minute = times[n][t].1
+//        } else {
+//            matchingDate.hour = times[n][t].1 < 10 ? times[n][t].0 - 1 : times[n][t].0
+//            matchingDate.minute = times[n][t].1 < 10 ? times[n][t].1 + 50 : times[n][t].1 - 10
+//        }
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: matchingDate, repeats: true)
+//        let requestIdentifier = "com.wyw.tush.n\(n)\(t)"
+//        let request = UNNotificationRequest(
+//            identifier: requestIdentifier, content: content, trigger: trigger
+//        )
+//        UNUserNotificationCenter.current().add(request) {error in
+//            if error == nil {
+//                UserDefaults.standard.set(true, forKey: "_nPN_\(n)_\(t)")
+//            } else {print(error.debugDescription)}
+//        }
+//        UNUserNotificationCenter.current().get
+//    }
 }
