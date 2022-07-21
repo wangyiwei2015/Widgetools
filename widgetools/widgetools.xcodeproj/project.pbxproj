@@ -106,6 +106,7 @@
 		4D79C238282CDA6F0098F230 = {
 			isa = PBXGroup;
 			children = (
+				4D8A670B288942D300935AE3 /* Packages */,
 				4D79C270282CDE270098F230 /* wdgtsExtension.entitlements */,
 				4D79C243282CDA6F0098F230 /* widgetools */,
 				4D79C25C282CDAFF0098F230 /* wdgts */,
@@ -172,6 +173,13 @@
 				4DF432472830AB68004A17FD /* TimerWidget.swift */,
 			);
 			path = wdgts;
+			sourceTree = "<group>";
+		};
+		4D8A670B288942D300935AE3 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,7 +448,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = widgetools/Info.plist;
+<<<<<<< Updated upstream
 				INFOPLIST_KEY_CFBundleDisplayName = WidgeTools;
+=======
+				INFOPLIST_KEY_CFBundleDisplayName = "   ";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+>>>>>>> Stashed changes
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -474,7 +487,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = widgetools/Info.plist;
+<<<<<<< Updated upstream
 				INFOPLIST_KEY_CFBundleDisplayName = WidgeTools;
+=======
+				INFOPLIST_KEY_CFBundleDisplayName = "   ";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+>>>>>>> Stashed changes
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -497,6 +515,7 @@
 		4D79C269282CDB000098F230 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = wdgtsExtension.entitlements;
@@ -526,6 +545,7 @@
 		4D79C26A282CDB000098F230 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = wdgtsExtension.entitlements;

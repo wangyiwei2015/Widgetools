@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WidgetKit
+import Invisibility
 
 extension ContentView {
     @ViewBuilder func AutoPlusSymbol(for object: UIImage?) -> some View {
@@ -55,6 +56,10 @@ extension ContentView {
                 //full wallpaper
                 try! brightImg.jpegData(compressionQuality: 1.0)?.write(to: URL(fileURLWithPath: "\(wallPath)/imgB.jpg"), options: .atomic)
                 //cropped wallpaper
+                
+                //Wallpaper(brightImg)
+                
+                
                 for pos in 1...11 {
                     if let img = cropImage(brightImg, toRect: WidgetCropPostion(rawValue: pos - 1)!.getRect()) {
                         try! img.jpegData(compressionQuality: 1.0)!.write(to: URL(fileURLWithPath: "\(wallPath)/imgB\(pos).jpg"), options: .atomic)
