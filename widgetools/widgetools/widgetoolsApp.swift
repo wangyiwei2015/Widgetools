@@ -75,6 +75,11 @@ struct widgetoolsApp: App {
                     default: break
                     }
                 }
+//                .onAppear {
+//                    print(UIDevice.current.type)
+//                    print(UIScreen.main.bounds.size)
+//                    print(UIScreen.main.scale)
+//                }
         }
     }
 }

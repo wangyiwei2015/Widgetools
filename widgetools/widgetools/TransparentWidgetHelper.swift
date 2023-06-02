@@ -94,6 +94,10 @@ struct DeviceWidgetPosition {
         }
         
         switch UIDevice().type {
+        case .iPhone14, .iPhone14Pro:
+            return CGPoint(x: 82/3, y: 90)
+//        case .iPhone14ProMax:
+//            return CGSize(width: 0, height: 0)
         case .iPhone13Mini:
             return CGPoint(x: 22, y: 74)
         case .iPhone12ProMax, .iPhone13ProMax:
@@ -134,6 +138,10 @@ struct DeviceWidgetPosition {
         }
         
         switch UIDevice().type {
+        case .iPhone14, .iPhone14Pro:
+            return CGPoint(x: 622/3, y: 90)
+//        case .iPhone14ProMax:
+//            return CGSize(width: 0, height: 0)
         case .iPhone13Mini:
             return CGPoint(x: 189, y: 74)
         case .iPhone12ProMax, .iPhone13ProMax:
@@ -174,6 +182,10 @@ struct DeviceWidgetPosition {
         }
         
         switch UIDevice().type {
+        case .iPhone14, .iPhone14Pro:
+            return CGPoint(x: 82/3, y: 286)
+//        case .iPhone14ProMax:
+//            return CGSize(width: 0, height: 0)
         case .iPhone13Mini:
             return CGPoint(x: 22, y: 256.3333)
         case .iPhone12ProMax, .iPhone13ProMax:
@@ -214,6 +226,10 @@ struct DeviceWidgetPosition {
         }
         
         switch UIDevice().type {
+        case .iPhone14, .iPhone14Pro:
+            return CGPoint(x: 622/3, y: 286)
+//        case .iPhone14ProMax:
+//            return CGSize(width: 0, height: 0)
         case .iPhone13Mini:
             return CGPoint(x: 189, y: 256.3333)
         case .iPhone12ProMax, .iPhone13ProMax:
@@ -254,6 +270,10 @@ struct DeviceWidgetPosition {
         }
         
         switch UIDevice().type {
+        case .iPhone14, .iPhone14Pro:
+            return CGPoint(x: 82/3, y: 482)
+//        case .iPhone14ProMax:
+//            return CGSize(width: 0, height: 0)
         case .iPhone13Mini:
             return CGPoint(x: 22, y: 439)
         case .iPhone12ProMax, .iPhone13ProMax:
@@ -294,6 +314,10 @@ struct DeviceWidgetPosition {
         }
         
         switch UIDevice().type {
+        case .iPhone14, .iPhone14Pro:
+            return CGPoint(x: 622/3, y: 482)
+//        case .iPhone14ProMax:
+//            return CGSize(width: 0, height: 0)
         case .iPhone13Mini:
             return CGPoint(x: 189, y: 439)
         case .iPhone12ProMax, .iPhone13ProMax:
@@ -334,6 +358,10 @@ struct DeviceWidgetPosition {
         }
         
         switch UIDevice().type {
+        case .iPhone14, .iPhone14Pro:
+            return CGPoint(x: 82/3, y: 90)
+//        case .iPhone14ProMax:
+//            return CGSize(width: 0, height: 0)
         case .iPhone13Mini:
             return CGPoint(x: 22, y: 74)
         case .iPhone12ProMax, .iPhone13ProMax:
@@ -374,6 +402,10 @@ struct DeviceWidgetPosition {
         }
         
         switch UIDevice().type {
+        case .iPhone14, .iPhone14Pro:
+            return CGPoint(x: 82/3, y: 286)
+//        case .iPhone14ProMax:
+//            return CGSize(width: 0, height: 0)
         case .iPhone13Mini:
             return CGPoint(x: 22, y: 256.3333)
         case .iPhone12ProMax, .iPhone13ProMax:
@@ -414,6 +446,10 @@ struct DeviceWidgetPosition {
         }
         
         switch UIDevice().type {
+        case .iPhone14, .iPhone14Pro:
+            return CGPoint(x: 82/3, y: 482)
+//        case .iPhone14ProMax:
+//            return CGSize(width: 0, height: 0)
         case .iPhone13Mini:
             return CGPoint(x: 22, y: 439)
         case .iPhone12ProMax, .iPhone13ProMax:
@@ -455,6 +491,10 @@ enum DeviceWidgetSize {
         }
         
         switch UIDevice().type {
+        case .iPhone14, .iPhone14Pro:
+            return CGSize(width: 158, height: 158)
+//        case .iPhone14ProMax:
+//            return CGSize(width: 0, height: 0)
         case .iPhone13Mini:
             return CGSize(width: 149, height: 149)
         case .iPhone12ProMax, .iPhone13ProMax:
@@ -491,6 +531,10 @@ enum DeviceWidgetSize {
         }
         
         switch UIDevice().type {
+        case .iPhone14, .iPhone14Pro:
+            return CGSize(width: 338, height: 158)
+//        case .iPhone14ProMax:
+//            return CGSize(width: 0, height: 0)
         case .iPhone13Mini:
             return CGSize(width: 316, height: 149)
         case .iPhone12ProMax, .iPhone13ProMax:
@@ -527,6 +571,10 @@ enum DeviceWidgetSize {
         }
         
         switch UIDevice().type {
+        case .iPhone14, .iPhone14Pro:
+            return CGSize(width: 338, height: 354)
+        case .iPhone14ProMax:
+            return CGSize(width: 0, height: 0)
         case .iPhone13Mini:
             return CGSize(width: 316, height: 316)
         case .iPhone12ProMax, .iPhone13ProMax:
@@ -581,6 +629,9 @@ extension UIDevice {
              iPhone13 = "iPhone 13",
              iPhone13Pro = "iPhone 13 Pro",
              iPhone13ProMax = "iPhone 13 Pro Max",
+             iPhone14 = "iPhone 14",
+             iPhone14Pro = "iPhone 14 Pro",
+             iPhone14ProMax = "iPhone 14 Pro Max",
 
              unrecognized = "?unrecognized?"
     }
@@ -632,6 +683,10 @@ extension UIDevice {
             "iPhoen14,5": .iPhone13,
             "iPhoen14,2": .iPhone13Pro,
             "iPhoen14,3": .iPhone13ProMax,
+            
+            "iPhone15,1": .iPhone14,
+            "iPhone15,2": .iPhone14Pro,
+            "iPhone15,3": .iPhone14ProMax
         ]
 
         if let model = modelMap[String(validatingUTF8: modelCode!)!] {
@@ -644,6 +699,7 @@ extension UIDevice {
             }
             return model
         }
+        print(String(validatingUTF8: modelCode!)!)
         return Model.unrecognized
     }
 }
