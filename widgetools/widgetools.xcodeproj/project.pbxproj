@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4D15A4A9282E15980027F675 /* PixelCanvasWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15A4A8282E15980027F675 /* PixelCanvasWidget.swift */; };
 		4D15A4AB282E292D0027F675 /* CanvasCtrlWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15A4AA282E292D0027F675 /* CanvasCtrlWidget.swift */; };
-		4D15A4AD282E3E390027F675 /* TransparentWidgetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15A4AC282E3E390027F675 /* TransparentWidgetHelper.swift */; };
 		4D15A4AF282E42240027F675 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15A4AE282E42240027F675 /* ImagePicker.swift */; };
 		4D15A4B1282E42390027F675 /* ContentView+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15A4B0282E42390027F675 /* ContentView+Crop.swift */; };
 		4D3A9B5A282D534600F0483A /* RandgenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A9B59282D534600F0483A /* RandgenWidget.swift */; };
@@ -27,6 +26,7 @@
 		4D79C267282CDB000098F230 /* wdgtsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4D79C256282CDAFF0098F230 /* wdgtsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4D79C272282CDE8E0098F230 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D79C271282CDE8E0098F230 /* Utils.swift */; };
 		4D79C273282CDE8E0098F230 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D79C271282CDE8E0098F230 /* Utils.swift */; };
+		B32EEED22ABC649900212F82 /* Transparency in Frameworks */ = {isa = PBXBuildFile; productRef = B32EEED12ABC649900212F82 /* Transparency */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,6 @@
 /* Begin PBXFileReference section */
 		4D15A4A8282E15980027F675 /* PixelCanvasWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelCanvasWidget.swift; sourceTree = "<group>"; };
 		4D15A4AA282E292D0027F675 /* CanvasCtrlWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasCtrlWidget.swift; sourceTree = "<group>"; };
-		4D15A4AC282E3E390027F675 /* TransparentWidgetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentWidgetHelper.swift; sourceTree = "<group>"; };
 		4D15A4AE282E42240027F675 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		4D15A4B0282E42390027F675 /* ContentView+Crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+Crop.swift"; sourceTree = "<group>"; };
 		4D3A9B59282D534600F0483A /* RandgenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandgenWidget.swift; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B32EEED22ABC649900212F82 /* Transparency in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +131,6 @@
 				4D15A4AE282E42240027F675 /* ImagePicker.swift */,
 				4D79C248282CDA700098F230 /* Assets.xcassets */,
 				4D79C24A282CDA700098F230 /* Preview Content */,
-				4D15A4AC282E3E390027F675 /* TransparentWidgetHelper.swift */,
 			);
 			path = widgetools;
 			sourceTree = "<group>";
@@ -186,6 +185,9 @@
 				4D79C266282CDB000098F230 /* PBXTargetDependency */,
 			);
 			name = widgetools;
+			packageProductDependencies = (
+				B32EEED12ABC649900212F82 /* Transparency */,
+			);
 			productName = widgetools;
 			productReference = 4D79C241282CDA6F0098F230 /* widgetools.app */;
 			productType = "com.apple.product-type.application";
@@ -234,6 +236,9 @@
 				Base,
 			);
 			mainGroup = 4D79C238282CDA6F0098F230;
+			packageReferences = (
+				B32EEED02ABC649900212F82 /* XCRemoteSwiftPackageReference "Transparency" */,
+			);
 			productRefGroup = 4D79C242282CDA6F0098F230 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -274,7 +279,6 @@
 				4D79C264282CDB000098F230 /* WidgetConfig.intentdefinition in Sources */,
 				4D15A4B1282E42390027F675 /* ContentView+Crop.swift in Sources */,
 				4D15A4AF282E42240027F675 /* ImagePicker.swift in Sources */,
-				4D15A4AD282E3E390027F675 /* TransparentWidgetHelper.swift in Sources */,
 				4D79C272282CDE8E0098F230 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -581,6 +585,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B32EEED02ABC649900212F82 /* XCRemoteSwiftPackageReference "Transparency" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/wangyiwei2015/Transparency";
+			requirement = {
+				branch = dev;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B32EEED12ABC649900212F82 /* Transparency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B32EEED02ABC649900212F82 /* XCRemoteSwiftPackageReference "Transparency" */;
+			productName = Transparency;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4D79C239282CDA6F0098F230 /* Project object */;
 }

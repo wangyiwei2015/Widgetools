@@ -55,16 +55,17 @@ extension ContentView {
                 //full wallpaper
                 try! brightImg.jpegData(compressionQuality: 1.0)?.write(to: URL(fileURLWithPath: "\(wallPath)/imgB.jpg"), options: .atomic)
                 //cropped wallpaper
-                for pos in 1...11 {
-                    if let img = cropImage(brightImg, toRect: WidgetCropPostion(rawValue: pos - 1)!.getRect()) {
-                        try! img.jpegData(compressionQuality: 1.0)!.write(to: URL(fileURLWithPath: "\(wallPath)/imgB\(pos).jpg"), options: .atomic)
-                    } else {
-                        //error and cleanup
-                        try? FileManager.default.removeItem(atPath: "\(wallPath)/imgB.jpg")
-                        bgBright = nil
-                        errAlert = true
-                        return
+                if let bgImages = bgGen.getImages(for: brightImg.cgImage!) {
+                    let flatBgImages = bgImages.flattened()
+                    for pos in 1...11 {
+                        let bgData = UIImage(cgImage: flatBgImages[pos - 1]).jpegData(compressionQuality: 0.9)!
+                        try! bgData.write(to: URL(fileURLWithPath: "\(wallPath)/imgB\(pos).jpg"), options: .atomic)
                     }
+                } else {
+                    try? FileManager.default.removeItem(atPath: "\(wallPath)/imgB.jpg")
+                    bgBright = nil
+                    errAlert = true
+                    return
                 }
             }
             
@@ -74,21 +75,20 @@ extension ContentView {
                 //full wallpaper
                 try! darkImg.jpegData(compressionQuality: 1.0)?.write(to: URL(fileURLWithPath: "\(wallPath)/imgD.jpg"), options: .atomic)
                 //cropped wallpaper
-                for pos in 1...11 {
-                    if let img = cropImage(darkImg, toRect: WidgetCropPostion(rawValue: pos - 1)!.getRect()) {
-                        try! img.jpegData(compressionQuality: 1.0)!.write(to: URL(fileURLWithPath: "\(wallPath)/imgD\(pos).jpg"), options: .atomic)
-                    } else {
-                        //error and cleanup
-                        try? FileManager.default.removeItem(atPath: "\(wallPath)/imgD.jpg")
-                        bgDark = nil
-                        errAlert = true
-                        return
+                if let bgImages = bgGen.getImages(for: darkImg.cgImage!) {
+                    let flatBgImages = bgImages.flattened()
+                    for pos in 1...11 {
+                        let bgData = UIImage(cgImage: flatBgImages[pos - 1]).jpegData(compressionQuality: 0.9)!
+                        try! bgData.write(to: URL(fileURLWithPath: "\(wallPath)/imgD\(pos).jpg"), options: .atomic)
                     }
+                } else {
+                    try? FileManager.default.removeItem(atPath: "\(wallPath)/imgD.jpg")
+                    bgDark = nil
+                    errAlert = true
+                    return
                 }
             }
-            
         }
-        //print(imgPath)
         postSaveWall()
     }
     

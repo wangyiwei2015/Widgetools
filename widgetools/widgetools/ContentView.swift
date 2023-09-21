@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Transparency
 
 struct ContentView: View {
     
@@ -17,6 +18,8 @@ struct ContentView: View {
     @State var showsPicker = false
     @State var showsHelp = false
     @State var errAlert = false
+    
+    let bgGen = WidgetBackground()
     
     var body: some View {
         TabView(selection: $tab) {
