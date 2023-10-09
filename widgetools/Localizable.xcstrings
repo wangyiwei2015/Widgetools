@@ -1,0 +1,181 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "_invalid_wall" : {
+
+    },
+    "%@" : {
+
+    },
+    "%lld" : {
+
+    },
+    "Action URL" : {
+
+    },
+    "Button Actions" : {
+
+    },
+    "canvas_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Draw pixels"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "绘制像素图案"
+          }
+        }
+      }
+    },
+    "canvas_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canvas"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画布"
+          }
+        }
+      }
+    },
+    "canvasctrl_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set paint colors"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择画笔颜色"
+          }
+        }
+      }
+    },
+    "canvasctrl_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canvas Controls"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画布工具栏"
+          }
+        }
+      }
+    },
+    "Config" : {
+
+    },
+    "Config error" : {
+
+    },
+    "counter_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Count integers"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "整数计数加减"
+          }
+        }
+      }
+    },
+    "counter_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Counter"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "计数器"
+          }
+        }
+      }
+    },
+    "Data" : {
+
+    },
+    "Dismiss" : {
+
+    },
+    "randgen_desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generate random integers"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "生成制定范围随机整数"
+          }
+        }
+      }
+    },
+    "randgen_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Random Generator"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "随机数生成"
+          }
+        }
+      }
+    },
+    "Tap to\nrefresh" : {
+
+    },
+    "Title" : {
+
+    },
+    "Wallpaper" : {
+
+    },
+    "WidgeTools" : {
+
+    }
+  },
+  "version" : "1.0"
+}

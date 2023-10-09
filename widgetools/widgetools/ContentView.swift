@@ -38,6 +38,7 @@ struct ContentView: View {
                         .filter({$0.prefix(8) == "_canvas_"})
                         .description
                     )
+                    Text(ud.string(forKey: "last_cmd") ?? "None last cmd")
                 }.padding()
             }.tag(1).tabItem({Label("Data", systemImage: "doc")})
             

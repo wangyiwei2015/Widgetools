@@ -70,6 +70,31 @@ struct WGCanvasCtrlView: View {
     
     let staticColors: [Color] = [Color(UIColor.systemGray5), .blue, .red, .green]
     
+    @ViewBuilder func clearBtnLabel(w: CGFloat) -> some View {
+        Circle().fill().foregroundColor(.gray)
+            .frame(width: w, height: w)
+            .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 3)
+            .overlay(
+                Image(systemName: "trash.fill")
+                    .foregroundColor(.white)
+                    .frame(width: w / 2, height: w / 2)
+            ).offset(y: -2)
+            .frame(width: w, height: w)
+    }
+    
+    @ViewBuilder func colorBtnLabel(_ index: Int, w: CGFloat) -> some View {
+        Circle().fill().foregroundColor(staticColors[index])
+            .frame(width: w, height: w)
+            .shadow(color: Color(UIColor(white: 0, alpha: selectedColor == index - 1 ? 0 : 0.5)), radius: 2, y: 2)
+            .overlay(
+                Circle().fill().foregroundColor(.white)
+                    .frame(width: w / 2, height: w / 2)
+                    .opacity(selectedColor == index - 1 ? 1 : 0)
+            )
+            .offset(y: selectedColor == index - 1 ? 0 : -2)
+            .frame(width: w, height: w)
+    }
+    
     var body: some View {
         ZStack {
             if let wallpaperClip = background {
@@ -78,28 +103,25 @@ struct WGCanvasCtrlView: View {
             GeometryReader {geo in
                 let w = geo.size.width / 8
                 HStack(spacing: 10) {
-                    Link(destination: URL(string: "canvasctrl/\(canvasID)/clear")!) {
-                        Circle().fill().foregroundColor(.gray)
-                            .frame(width: w, height: w)
-                            .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 3)
-                            .overlay(
-                                Image(systemName: "trash.fill")
-                                    .foregroundColor(.white)
-                                    .frame(width: w / 2, height: w / 2)
-                            ).offset(y: -2)
-                    }.frame(width: w, height: w)
+                    if #available(iOS 17, *) {
+                        Button(intent: ButtonIntent("canvasctrl/\(canvasID)/clear")) {
+                            clearBtnLabel(w: w)
+                        }
+                    } else {
+                        Link(destination: URL(string: "canvasctrl/\(canvasID)/clear")!) {
+                            clearBtnLabel(w: w)
+                        }
+                    }
                     ForEach(0...3, id: \.self) {index in
-                        Link(destination: URL(string: "canvasctrl/\(canvasID)/\(index - 1)")!) {
-                            Circle().fill().foregroundColor(staticColors[index])
-                                .frame(width: w, height: w)
-                                .shadow(color: Color(UIColor(white: 0, alpha: selectedColor == index - 1 ? 0 : 0.5)), radius: 2, y: 2)
-                                .overlay(
-                                    Circle().fill().foregroundColor(.white)
-                                        .frame(width: w / 2, height: w / 2)
-                                        .opacity(selectedColor == index - 1 ? 1 : 0)
-                                )
-                                .offset(y: selectedColor == index - 1 ? 0 : -2)
-                        }.frame(width: w, height: w)
+                        if #available(iOS 17, *) {
+                            Button(intent: ButtonIntent("canvasctrl/\(canvasID)/\(index - 1)")) {
+                                colorBtnLabel(index, w: w)
+                            }
+                        } else {
+                            Link(destination: URL(string: "canvasctrl/\(canvasID)/\(index - 1)")!) {
+                                colorBtnLabel(index, w: w)
+                            }
+                        }
                     }
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
             }
@@ -127,6 +149,7 @@ struct WTCanvasControl: Widget {
         .configurationDisplayName(localized("canvasctrl_name"))
         .description(localized("canvasctrl_desc"))
         .supportedFamilies([.systemMedium])
+        .contentMarginsDisabled()
     }
 }
 

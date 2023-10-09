@@ -82,6 +82,17 @@ struct WGRandgenView: View {
         self.pos = pos
     }
     
+    @ViewBuilder var buttonLabel: some View {
+        Image(systemName: "arrow.counterclockwise")
+            .font(.system(size: 28, weight: .semibold, design: .rounded))
+            .foregroundColor(.white)
+            .background(
+                Circle().fill().foregroundColor(.blue)
+                    .frame(width: 60, height: 60)
+                    .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 2)
+            ).frame(width: 60, height: 60)
+    }
+    
     var body: some View {
         ZStack {
             if let wallpaperClip = background {
@@ -114,6 +125,12 @@ struct WGRandgenView: View {
                         .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 4)
                 )
                 .widgetURL(URL(string: "randgen/new")!)
+                if #available(iOS 17, *) {
+                    Button(intent: ButtonIntent("randgen/new")) {
+                        Circle().fill().foregroundColor(Color(UIColor(white: 1, alpha: 0.000001)))
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    }
+                }
             } else {
                 HStack {
                     Spacer()
@@ -125,16 +142,15 @@ struct WGRandgenView: View {
                             .font(.system(size: 32, weight: .semibold))
                     }
                     Spacer()
-                    Link(destination: URL(string: "randgen/new")!) {
-                        Image(systemName: "arrow.counterclockwise")
-                            .font(.system(size: 28, weight: .semibold, design: .rounded))
-                            .foregroundColor(.white)
-                            .background(
-                                Circle().fill().foregroundColor(.blue)
-                                    .frame(width: 60, height: 60)
-                                    .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 2)
-                            )
-                    }.frame(width: 60, height: 60).padding(.trailing)
+                    if #available(iOS 17, *) {
+                        Button(intent: ButtonIntent("randgen/new")) {
+                            buttonLabel
+                        }.padding(.trailing)
+                    } else {
+                        Link(destination: URL(string: "randgen/new")!) {
+                            buttonLabel
+                        }.padding(.trailing)
+                    }
                 }
                 .padding(.vertical)
                 .background(
@@ -160,6 +176,7 @@ struct WTRandgen: Widget {
         .configurationDisplayName(localized("randgen_name"))
         .description(localized("randgen_desc"))
         .supportedFamilies([.systemSmall, .systemMedium])
+        .contentMarginsDisabled()
     }
 }
 

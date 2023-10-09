@@ -93,14 +93,29 @@ struct WGCanvasView: View {
                 VStack(spacing: 2) {
                     ForEach(0..<height, id: \.self) {row in
                         HStack(spacing: 2) {
-                            ForEach(0..<width, id: \.self) {col in
-                                let pos = row * width + col
-                                Link(destination: URL(string: "canvas/\(canvasID)/\(pos)")!) {
-                                    Circle().fill().foregroundColor(color(of: pos))
-                                        .frame(width: w, height: w)
-                                }.frame(width: w, height: w)
-                                .shadow(color: Color(UIColor(white: 0, alpha: 0.6)), radius: 1, y: 1)
-                            }
+                            //ForEach(0..<width, id: \.self) {col in
+                                //let pos = row * width + col
+                                if #available(iOS 17, *) {
+                                    ForEach(0..<width, id: \.self) {col in
+                                        let pos = row * width + col
+                                        Button(intent: ButtonIntent("canvas/\(canvasID)/\(pos)")) {
+                                            Circle().fill().foregroundColor(color(of: pos))
+                                                .frame(width: w, height: w)
+                                        }.frame(width: w, height: w)
+                                        .shadow(color: Color(UIColor(white: 0, alpha: 0.6)), radius: 1, y: 1)
+                                    }
+                                } else {
+                                    ForEach(0..<width, id: \.self) {col in
+                                        let pos = row * width + col
+                                        Link(destination: URL(string: "canvas/\(canvasID)/\(pos)")!) {
+                                            Circle().fill().foregroundColor(color(of: pos))
+                                                .frame(width: w, height: w)
+                                        }.frame(width: w, height: w)
+                                        .shadow(color: Color(UIColor(white: 0, alpha: 0.6)), radius: 1, y: 1)
+                                    }
+                                }
+                                //.shadow(color: Color(UIColor(white: 0, alpha: 0.6)), radius: 1, y: 1)
+                            //}
                         }
                     }
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -123,6 +138,7 @@ struct WTCanvas: Widget {
         .configurationDisplayName(localized("canvas_name"))
         .description(localized("canvas_desc"))
         .supportedFamilies([.systemMedium, .systemLarge])
+        .contentMarginsDisabled()
     }
 }
 

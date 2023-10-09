@@ -134,30 +134,39 @@ struct WGCounterView: View {
         }
     }
     
+    @ViewBuilder func buttonLabel(_ isInc: Bool) -> some View {
+        Image(systemName: isInc ? "plus" : "minus")
+            .font(.system(size: 28, weight: .semibold, design: .rounded))
+            .foregroundColor(.white)
+            .background(
+                Circle().fill().foregroundColor(.blue)
+                    .frame(width: 60, height: 60)
+                    .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 2)
+            ).frame(width: 60, height: 60)
+    }
+    
     @ViewBuilder func BtnDec() -> some View {
-        Link(destination: URL(string: "counter/\(counterID)/dec")!) {
-            Image(systemName: "minus")
-                .font(.system(size: 28, weight: .semibold, design: .rounded))
-                .foregroundColor(.white)
-                .background(
-                    Circle().fill().foregroundColor(.blue)
-                        .frame(width: 60, height: 60)
-                        .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 2)
-                )
-        }.frame(width: 60, height: 60)
+        if #available(iOS 17, *) {
+            Button(intent: ButtonIntent("counter/\(counterID)/dec")) {
+                buttonLabel(false)
+            }.frame(width: 60, height: 60)
+        } else {
+            Link(destination: URL(string: "counter/\(counterID)/dec")!) {
+                buttonLabel(false)
+            }.frame(width: 60, height: 60)
+        }
     }
     
     @ViewBuilder func BtnInc() -> some View {
-        Link(destination: URL(string: "counter/\(counterID)/inc")!) {
-            Image(systemName: "plus")
-                .font(.system(size: 28, weight: .semibold, design: .rounded))
-                .foregroundColor(.white)
-                .background(
-                    Circle().fill().foregroundColor(.blue)
-                        .frame(width: 60, height: 60)
-                        .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 2)
-                )
-        }.frame(width: 60, height: 60)
+        if #available(iOS 17, *) {
+            Button(intent: ButtonIntent("counter/\(counterID)/inc")) {
+                buttonLabel(true)
+            }.frame(width: 60, height: 60)
+        } else {
+            Link(destination: URL(string: "counter/\(counterID)/inc")!) {
+                buttonLabel(true)
+            }.frame(width: 60, height: 60)
+        }
     }
 }
 
@@ -176,6 +185,7 @@ struct WTCounter: Widget {
         .configurationDisplayName(localized("counter_name"))
         .description(localized("counter_desc"))
         .supportedFamilies([.systemMedium, .systemLarge])
+        .contentMarginsDisabled()
     }
 }
 
