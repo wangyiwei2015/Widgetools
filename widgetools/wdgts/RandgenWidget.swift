@@ -129,7 +129,7 @@ struct WGRandgenView: View {
                     Button(intent: ButtonIntent("randgen/new")) {
                         Circle().fill().foregroundColor(Color(UIColor(white: 1, alpha: 0.000001)))
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    }
+                    }.buttonStyle(WTLBtnStyle())
                 }
             } else {
                 HStack {
@@ -145,7 +145,7 @@ struct WGRandgenView: View {
                     if #available(iOS 17, *) {
                         Button(intent: ButtonIntent("randgen/new")) {
                             buttonLabel
-                        }.padding(.trailing)
+                        }.buttonStyle(WTLBtnStyle()).padding(.trailing)
                     } else {
                         Link(destination: URL(string: "randgen/new")!) {
                             buttonLabel

@@ -127,7 +127,13 @@
     "Data" : {
 
     },
+    "Delete" : {
+
+    },
     "Dismiss" : {
+
+    },
+    "On widget button tapped" : {
 
     },
     "randgen_desc" : {

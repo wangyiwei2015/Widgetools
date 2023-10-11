@@ -106,7 +106,7 @@ struct WGCanvasCtrlView: View {
                     if #available(iOS 17, *) {
                         Button(intent: ButtonIntent("canvasctrl/\(canvasID)/clear")) {
                             clearBtnLabel(w: w)
-                        }
+                        }.buttonStyle(WTLBtnStyle())
                     } else {
                         Link(destination: URL(string: "canvasctrl/\(canvasID)/clear")!) {
                             clearBtnLabel(w: w)
@@ -116,7 +116,7 @@ struct WGCanvasCtrlView: View {
                         if #available(iOS 17, *) {
                             Button(intent: ButtonIntent("canvasctrl/\(canvasID)/\(index - 1)")) {
                                 colorBtnLabel(index, w: w)
-                            }
+                            }.buttonStyle(WTLBtnStyle())
                         } else {
                             Link(destination: URL(string: "canvasctrl/\(canvasID)/\(index - 1)")!) {
                                 colorBtnLabel(index, w: w)

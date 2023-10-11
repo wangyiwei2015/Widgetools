@@ -19,6 +19,9 @@ struct ContentView: View {
     @State var showsHelp = false
     @State var errAlert = false
     
+    @State var counterData = ud.dictionaryRepresentation().keys.filter({$0.prefix(9) == "_counter_"}).items
+    @State var canvasData = ud.dictionaryRepresentation().keys.filter({$0.prefix(8) == "_canvas_"}).items
+    
     let bgGen = WidgetBackground()
     
     var body: some View {
@@ -28,17 +31,23 @@ struct ContentView: View {
             
             ScrollView(.vertical, showsIndicators: true) {
                 VStack {
-                    Text(
-                        ud.dictionaryRepresentation().keys
-                        .filter({$0.prefix(9) == "_counter_"})
-                        .description
-                    )
-                    Text(
-                        ud.dictionaryRepresentation().keys
-                        .filter({$0.prefix(8) == "_canvas_"})
-                        .description
-                    )
-                    Text(ud.string(forKey: "last_cmd") ?? "None last cmd")
+                    ForEach(counterData, id: \.self) {counterKey in
+                        Text(counterKey).contextMenu {
+                            Button {
+                                ud.removeObject(forKey: counterKey)
+                                refreshUD()
+                            } label: {Label("Delete", systemImage: "trashbin.fill")}
+                        }
+                    }
+                    ForEach(canvasData, id: \.self) {canvasKey in
+                        Text(canvasKey).contextMenu {
+                            Button {
+                                ud.removeObject(forKey: canvasKey)
+                                refreshUD()
+                            } label: {Label("Delete", systemImage: "trashbin.fill")}
+                        }
+                    }
+                    //Text(ud.string(forKey: "last_cmd") ?? "None last cmd")
                 }.padding()
             }.tag(1).tabItem({Label("Data", systemImage: "doc")})
             
@@ -57,6 +66,12 @@ struct ContentView: View {
             )
         }
         .alert("_invalid_wall", isPresented: $errAlert, actions: {Button("Dismiss"){}})
+        .onAppear() {refreshUD()}
+    }
+    
+    func refreshUD() {
+        counterData = ud.dictionaryRepresentation().keys.filter({$0.prefix(9) == "_counter_"}).items
+        canvasData = ud.dictionaryRepresentation().keys.filter({$0.prefix(8) == "_canvas_"}).items
     }
 }
 

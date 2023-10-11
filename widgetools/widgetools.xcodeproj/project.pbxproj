@@ -30,6 +30,7 @@
 		B32EEED42ABC663500212F82 /* ButtonIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32EEED32ABC663500212F82 /* ButtonIntents.swift */; };
 		B360B5952AD44AC2001B0D7E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B360B5942AD44AC2001B0D7E /* Localizable.xcstrings */; };
 		B360B5962AD44AC2001B0D7E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B360B5942AD44AC2001B0D7E /* Localizable.xcstrings */; };
+		B3F258452AD65D3400B6D937 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F258442AD65D3400B6D937 /* Styles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		4D79C271282CDE8E0098F230 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		B32EEED32ABC663500212F82 /* ButtonIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIntents.swift; sourceTree = "<group>"; };
 		B360B5942AD44AC2001B0D7E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		B3F258442AD65D3400B6D937 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				4D15A4A8282E15980027F675 /* PixelCanvasWidget.swift */,
 				4D15A4AA282E292D0027F675 /* CanvasCtrlWidget.swift */,
 				B32EEED32ABC663500212F82 /* ButtonIntents.swift */,
+				B3F258442AD65D3400B6D937 /* Styles.swift */,
 			);
 			path = wdgts;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F258452AD65D3400B6D937 /* Styles.swift in Sources */,
 				4D15A4A9282E15980027F675 /* PixelCanvasWidget.swift in Sources */,
 				4D79C263282CDB000098F230 /* WidgetConfig.intentdefinition in Sources */,
 				4D79C25E282CDAFF0098F230 /* CounterWidget.swift in Sources */,
@@ -441,7 +445,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = widgetools/widgetools.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"widgetools/Preview Content\"";
 				DEVELOPMENT_TEAM = JS2ME2LTBF;
 				ENABLE_PREVIEWS = YES;
@@ -459,7 +463,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wyw.widgetools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -479,7 +483,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = widgetools/widgetools.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"widgetools/Preview Content\"";
 				DEVELOPMENT_TEAM = JS2ME2LTBF;
 				ENABLE_PREVIEWS = YES;
@@ -497,7 +501,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wyw.widgetools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

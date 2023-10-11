@@ -101,7 +101,8 @@ struct WGCanvasView: View {
                                         Button(intent: ButtonIntent("canvas/\(canvasID)/\(pos)")) {
                                             Circle().fill().foregroundColor(color(of: pos))
                                                 .frame(width: w, height: w)
-                                        }.frame(width: w, height: w)
+                                        }.buttonStyle(WTLBtnStyle())
+                                        .frame(width: w, height: w)
                                         .shadow(color: Color(UIColor(white: 0, alpha: 0.6)), radius: 1, y: 1)
                                     }
                                 } else {

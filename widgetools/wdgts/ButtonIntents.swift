@@ -12,13 +12,17 @@ import WidgetKit
 @available(iOS 17, *)
 struct ButtonIntent: AppIntent {
     static let title: LocalizedStringResource = "Button Actions"
+    static let description = IntentDescription("On widget button tapped")
     
     init(_ actionLink: String) {
         self.link = actionLink
         ud.set(actionLink, forKey: "last_cmd")
     }
     
-    init() {fatalError()}
+    init() {
+        self.link = "/"
+        ud.set("no action", forKey: "last_cmd")
+    }
     
     @Parameter(title: "Action URL") var link: String
     

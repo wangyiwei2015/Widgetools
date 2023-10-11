@@ -150,6 +150,7 @@ struct WGCounterView: View {
             Button(intent: ButtonIntent("counter/\(counterID)/dec")) {
                 buttonLabel(false)
             }.frame(width: 60, height: 60)
+                .buttonStyle(WTLBtnStyle())
         } else {
             Link(destination: URL(string: "counter/\(counterID)/dec")!) {
                 buttonLabel(false)
@@ -162,6 +163,7 @@ struct WGCounterView: View {
             Button(intent: ButtonIntent("counter/\(counterID)/inc")) {
                 buttonLabel(true)
             }.frame(width: 60, height: 60)
+                .buttonStyle(WTLBtnStyle())
         } else {
             Link(destination: URL(string: "counter/\(counterID)/inc")!) {
                 buttonLabel(true)
@@ -189,10 +191,12 @@ struct WTCounter: Widget {
     }
 }
 
+@available (iOS 17.0, *)
 struct Counter_Previews: PreviewProvider {
     static var previews: some View {
         WGCounterView(
             title: "Sample", showBadge: "bdg", pos: nil
         ).previewContext(WidgetPreviewContext(family: .systemMedium))
+        .containerBackground(for: .widget) {Spacer()}
     }
 }
