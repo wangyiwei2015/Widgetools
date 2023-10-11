@@ -261,6 +261,38 @@
         }
       }
     },
+    "set_wall" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Setup wallpaper"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置壁纸"
+          }
+        }
+      }
+    },
+    "set_wall_tutorial" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Take a screenshot on a blank page"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在主屏幕空白页截一张图"
+          }
+        }
+      }
+    },
     "Tap to\nrefresh" : {
       "localizations" : {
         "zh-Hans" : {

@@ -53,6 +53,8 @@ struct ContentView: View {
             }.tag(1).tabItem({Label("Data", systemImage: "doc")})
             
             VStack {
+                Text("set_wall").font(.title)
+                Text("set_wall_tutorial").font(.title3)
                 HStack {
                     LightModeWallpaper
                         //.shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 2)
@@ -78,6 +80,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(tab: 2)
     }
 }
