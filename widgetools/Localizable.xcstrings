@@ -2,7 +2,20 @@
   "sourceLanguage" : "en",
   "strings" : {
     "_invalid_wall" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid wallpaper"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "壁纸截图无效"
+          }
+        }
+      }
     },
     "%@" : {
 
@@ -11,10 +24,24 @@
 
     },
     "Action URL" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "指令URL"
+          }
+        }
+      }
     },
     "Button Actions" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小组件指令"
+          }
+        }
+      }
     },
     "canvas_desc" : {
       "extractionState" : "manual",
@@ -85,10 +112,30 @@
       }
     },
     "Config" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配置"
+          }
+        }
+      }
     },
     "Config error" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid Config"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无效配置"
+          }
+        }
+      }
     },
     "counter_desc" : {
       "extractionState" : "manual",
@@ -124,17 +171,61 @@
         }
       }
     },
+    "ctxt_del_info" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All data (long press to delete)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所有小组件数据（长按删除）"
+          }
+        }
+      }
+    },
     "Data" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "数据"
+          }
+        }
+      }
     },
     "Delete" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除"
+          }
+        }
+      }
     },
     "Dismiss" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关闭"
+          }
+        }
+      }
     },
     "On widget button tapped" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小组件中按钮触发的动作"
+          }
+        }
+      }
     },
     "randgen_desc" : {
       "extractionState" : "manual",
@@ -171,16 +262,44 @@
       }
     },
     "Tap to\nrefresh" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轻点刷新"
+          }
+        }
+      }
     },
     "Title" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "标题"
+          }
+        }
+      }
     },
     "Wallpaper" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "手机壁纸"
+          }
+        }
+      }
     },
     "WidgeTools" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WidgeTools"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

@@ -10,7 +10,9 @@ import WidgetKit
 
 struct WTLBtnStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
-        configuration.label
+        configuration.label.overlay(
+            Circle().fill(Color.black).opacity(configuration.isPressed ? 0.2 : 0.0)
+        )
     }
 }
 

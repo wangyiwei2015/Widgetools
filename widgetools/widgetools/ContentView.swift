@@ -31,8 +31,9 @@ struct ContentView: View {
             
             ScrollView(.vertical, showsIndicators: true) {
                 VStack {
+                    Text("ctxt_del_info")
                     ForEach(counterData, id: \.self) {counterKey in
-                        Text(counterKey).contextMenu {
+                        Text(counterKey).foregroundColor(.gray).contextMenu {
                             Button {
                                 ud.removeObject(forKey: counterKey)
                                 refreshUD()
@@ -40,7 +41,7 @@ struct ContentView: View {
                         }
                     }
                     ForEach(canvasData, id: \.self) {canvasKey in
-                        Text(canvasKey).contextMenu {
+                        Text(canvasKey).foregroundColor(.gray).contextMenu {
                             Button {
                                 ud.removeObject(forKey: canvasKey)
                                 refreshUD()

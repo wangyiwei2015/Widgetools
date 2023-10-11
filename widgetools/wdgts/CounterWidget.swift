@@ -94,6 +94,7 @@ struct WGCounterView: View {
                         Header()
                         Text("\(counter)")
                             .font(.system(size: 40, weight: .regular, design: .monospaced))
+                            .contentTransition(.numericText())
                     }.padding(.horizontal)
                     BtnInc()
                 }
@@ -107,6 +108,7 @@ struct WGCounterView: View {
                     Header()
                     Text("\(counter)")
                         .font(.system(size: 80, weight: .regular, design: .monospaced))
+                        .contentTransition(.numericText())
                         .padding()
                     HStack {
                         BtnDec().padding(.horizontal)

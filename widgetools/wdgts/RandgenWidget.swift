@@ -106,6 +106,7 @@ struct WGRandgenView: View {
                         if let result = number {
                             Text("\(result)")
                                 .font(.system(size: 30, weight: .semibold))
+                                .contentTransition(.numericText())
                                 .padding(10)
                         } else {
                             Text("Config error").padding()
@@ -137,6 +138,7 @@ struct WGRandgenView: View {
                     if let result = number {
                         Text("\(result)")
                             .font(.system(size: 32, weight: .semibold))
+                            .contentTransition(.numericText())
                     } else {
                         Text("Config error")
                             .font(.system(size: 32, weight: .semibold))

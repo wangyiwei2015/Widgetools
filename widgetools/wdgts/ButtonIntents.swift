@@ -16,12 +16,12 @@ struct ButtonIntent: AppIntent {
     
     init(_ actionLink: String) {
         self.link = actionLink
-        ud.set(actionLink, forKey: "last_cmd")
+        //ud.set(actionLink, forKey: "last_cmd")
     }
     
     init() {
         self.link = "/"
-        ud.set("no action", forKey: "last_cmd")
+        //ud.set("no action", forKey: "last_cmd")
     }
     
     @Parameter(title: "Action URL") var link: String
@@ -36,14 +36,10 @@ struct ButtonIntent: AppIntent {
             ud.set(newValue, forKey: "_counter_\(counterID)")
             ud.set(cmd[2] == "inc" ? 1 : -1, forKey: "_counter_\(counterID)_op")
             WidgetCenter.shared.reloadTimelines(ofKind: "com.wyw.widgetools.widget.counter")
-            //debug
-            ud.set(ud.string(forKey: "last_cmd") ?? "" + "\nset counter", forKey: "last_cmd")
         case "randgen":
             if cmd[1] == "new" {
                 WidgetCenter.shared.reloadTimelines(ofKind: "com.wyw.widgetools.widget.randgen")
             }
-            //debug
-            ud.set(ud.string(forKey: "last_cmd") ?? "" + "\nset rand \(cmd[1])", forKey: "last_cmd")
         case "canvas":
             let canvasID = String(cmd[1])
             let targetColor = ud.integer(forKey: "_canvas_\(canvasID)_cfg")
@@ -72,8 +68,6 @@ struct ButtonIntent: AppIntent {
                 ud.set(newValue2, forKey: "_canvas_\(canvasID)_2")
             }
             WidgetCenter.shared.reloadTimelines(ofKind: "com.wyw.widgetools.widget.canvas")
-            //debug
-            ud.set(ud.string(forKey: "last_cmd") ?? "" + "\ndraw on canvas", forKey: "last_cmd")
         case "canvasctrl":
             let canvasID = String(cmd[1])
             if(cmd[2] == "clear") {
@@ -85,12 +79,8 @@ struct ButtonIntent: AppIntent {
                 ud.set(selectedColor, forKey: "_canvas_\(canvasID)_cfg")
             }
             WidgetCenter.shared.reloadTimelines(ofKind: "com.wyw.widgetools.widget.canvasctrl")
-            //debug
-            ud.set(ud.string(forKey: "last_cmd") ?? "" + "\nset cancas tool", forKey: "last_cmd")
         default: break
         }
-        //debug
-        ud.set(ud.string(forKey: "last_cmd") ?? "" + "\nreturn", forKey: "last_cmd")
         return .result()
     }
 }
