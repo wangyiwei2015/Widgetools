@@ -4,9 +4,11 @@
 
 ---
 
-Release: [App Store ↗](https://apps.apple.com/us/app/widgetools/id1634741840)
+**Release**: [App Store ↗](https://apps.apple.com/us/app/widgetools/id1634741840)
 
-Technical support & feedback: [Issues ↗](https://github.com/wangyiwei2015/Widgetools/issues) or [email ↗](mailto:wangyw.dev@outlook.com)
+**Technical support & feedback**:
+
+You may either submit [Issues ↗](https://github.com/wangyiwei2015/Widgetools/issues) on this project, or directly [email ↗](mailto:wangyw.dev@outlook.com) to me (wangyw.dev@outlook.com).
 
 ---
 

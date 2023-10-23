@@ -90,28 +90,35 @@ struct WGCounterView: View {
             if widgetFamily == .systemMedium {
                 HStack {
                     BtnDec()
+                    Spacer()
                     VStack {
                         Header()
                         Text("\(counter)")
                             .font(.system(size: 40, weight: .regular, design: .monospaced))
                             .contentTransition(.numericText())
                     }.padding(.horizontal)
+                    Spacer()
                     BtnInc()
                 }
-                .padding()
+                .padding(10)
                 .background(
                     Capsule(style: .continuous).fill().foregroundColor(Color(UIColor.systemBackground))
-                        .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 4)
+                        .shadow(color: Color(UIColor(
+                            white: 0, alpha: background == nil ? 0.0 : 0.5
+                        )), radius: 2, y: 4)
                 )
-            } else {
+            } else { // large
                 VStack {
                     Header()
+                    if background == nil {Spacer()}
                     Text("\(counter)")
                         .font(.system(size: 80, weight: .regular, design: .monospaced))
                         .contentTransition(.numericText())
                         .padding()
+                    if background == nil {Spacer()}
                     HStack {
                         BtnDec().padding(.horizontal)
+                        if background == nil {Spacer()}
                         BtnInc().padding(.horizontal)
                     }
                 }
@@ -119,7 +126,9 @@ struct WGCounterView: View {
                 .background(
                     Color(UIColor.systemBackground)
                         .mask(RoundedRectangle(cornerRadius: 40, style: .continuous))
-                        .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 4)
+                        .shadow(color: Color(UIColor(
+                            white: 0, alpha: background == nil ? 0.0 : 0.5
+                        )), radius: 2, y: 4)
                 )
             }
         }

@@ -107,7 +107,8 @@ struct WGRandgenView: View {
                             Text("\(result)")
                                 .font(.system(size: 30, weight: .semibold))
                                 .contentTransition(.numericText())
-                                .padding(10)
+                                .minimumScaleFactor(0.5)
+                                .padding(background == nil ? 4 : 10)
                         } else {
                             Text("Config error").padding()
                                 .font(.system(size: 20, weight: .semibold))
@@ -123,7 +124,9 @@ struct WGRandgenView: View {
                 .background(
                     Circle().fill().foregroundColor(Color(UIColor.systemBackground))
                         .padding(6)
-                        .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 4)
+                        .shadow(color: Color(UIColor(
+                            white: 0, alpha: background == nil ? 0.0 : 0.5
+                        )), radius: 2, y: 4)
                 )
                 .widgetURL(URL(string: "randgen/new")!)
                 if #available(iOS 17, *) {
@@ -132,7 +135,7 @@ struct WGRandgenView: View {
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }.buttonStyle(WTLBtnStyle())
                 }
-            } else {
+            } else { // med and large
                 HStack {
                     Spacer()
                     if let result = number {
@@ -157,7 +160,9 @@ struct WGRandgenView: View {
                 .padding(.vertical)
                 .background(
                     Capsule(style: .continuous).fill().foregroundColor(Color(UIColor.systemBackground))
-                        .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 4)
+                        .shadow(color: Color(UIColor(
+                            white: 0, alpha: background == nil ? 0.0 : 0.5
+                        )), radius: 2, y: 4)
                 )
             }
         }
@@ -182,10 +187,12 @@ struct WTRandgen: Widget {
     }
 }
 
+@available (iOS 17.0, *)
 struct Randgen_Previews: PreviewProvider {
     static var previews: some View {
         WGRandgenView(
             number: 12345678, pos: nil
         ).previewContext(WidgetPreviewContext(family: .systemMedium))
+        .containerBackground(for: .widget) {Spacer()}
     }
 }

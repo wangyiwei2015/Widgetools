@@ -101,7 +101,7 @@ struct WGCanvasCtrlView: View {
                 Image(uiImage: wallpaperClip).resizable()
             }
             GeometryReader {geo in
-                let w = geo.size.width / 8
+                let w = background == nil ? geo.size.width / 6 : geo.size.width / 8
                 HStack(spacing: 10) {
                     if #available(iOS 17, *) {
                         Button(intent: ButtonIntent("canvasctrl/\(canvasID)/clear")) {
@@ -128,7 +128,9 @@ struct WGCanvasCtrlView: View {
             .frame(height: 80)
             .background(
                 Capsule(style: .continuous).fill().foregroundColor(Color(UIColor.systemBackground))
-                    .shadow(color: Color(UIColor(white: 0, alpha: 0.5)), radius: 2, y: 4)
+                    .shadow(color: Color(UIColor(
+                        white: 0, alpha: background == nil ? 0.0 : 0.5
+                    )), radius: 2, y: 4)
             )
             .widgetURL(URL(string: "return/0")!)
         }
@@ -153,10 +155,12 @@ struct WTCanvasControl: Widget {
     }
 }
 
+@available (iOS 17.0, *)
 struct CanvasCtrl_Previews: PreviewProvider {
     static var previews: some View {
         WGCanvasCtrlView(
             canvasID: hashSHA256("default"), pos: nil
         ).previewContext(WidgetPreviewContext(family: .systemMedium))
+        .containerBackground(for: .widget) {Spacer()}
     }
 }
