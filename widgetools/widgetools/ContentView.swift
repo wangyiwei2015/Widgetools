@@ -85,13 +85,14 @@ struct ContentView: View {
                 Text("About").font(.title).bold()
                     .padding()
                 Text("Version \(ver), build \(build)\n\n_INFO")
+                    .padding()
                 Spacer()
                 Group {
                     Button {UIApplication.shared.open(URL(string: "https://github.com/wangyiwei2015/Widgetools")!)
                     } label: {
                         Label("Source code", systemImage: "chevron.left.forwardslash.chevron.right").bold()
                     }
-                    Button {UIApplication.shared.open(URL(string: "mailto:wangyw.dev@outlook.com?subject=WidgeTools%20Feedback&body=v\(ver)(\(build))\n================\n\n")!)
+                    Button {UIApplication.shared.open(URL(string: "mailto:wangyw.dev@outlook.com?subject=WidgeTools-Feedback&body=v\(ver)(\(build))\n================\n\n")!)
                     } label: {
                         Label("Email support", systemImage: "envelope").bold()
                     }.padding()
