@@ -23,6 +23,16 @@
     "%lld" : {
 
     },
+    "About" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关于"
+          }
+        }
+      }
+    },
     "Action URL" : {
       "localizations" : {
         "zh-Hans" : {
@@ -217,6 +227,12 @@
         }
       }
     },
+    "Email support" : {
+
+    },
+    "Go Home" : {
+
+    },
     "On widget button tapped" : {
       "localizations" : {
         "zh-Hans" : {
@@ -293,6 +309,9 @@
         }
       }
     },
+    "Source code" : {
+
+    },
     "Tap to\nrefresh" : {
       "localizations" : {
         "zh-Hans" : {
@@ -305,13 +324,48 @@
     },
     "Title" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WidgeTools"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "标题"
+            "value" : "WidgeTools"
           }
         }
       }
+    },
+    "v%@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "v%1$@ (%2$@)"
+          }
+        }
+      }
+    },
+    "Version %@, build %@\n\n_INFO" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version %1$@, build %2$@\n\nThe main features are accessed through widgets on your home screen. Every widget is unique, identified by its name (title). On data page, you can delete the save data of the widgets.\n\nIf the widgets are not shown, please restart your device (iOS 16 ~ 17.0.3)."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "版本 %1$@, build %2$@\n\n此 App 的主要功能通过主屏幕上的小组件实现，请在桌面上使用。每个组件的唯一性由它的名称/标题确定；在“数据”页面可以删除小组件产生的保存数据。\n\n如果安装后在库中没有显示小组件，请重启设备 (iOS 16 ~ 17.0.3)."
+          }
+        }
+      }
+    },
+    "View on App Store" : {
+
     },
     "Wallpaper" : {
       "localizations" : {
